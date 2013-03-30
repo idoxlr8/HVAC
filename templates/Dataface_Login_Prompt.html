@@ -1,0 +1,54 @@
+    {use_macro file="Dataface_Main_Template.html"}
+       {fill_slot name="custom_stylesheets"}
+       <style type="text/css">
+       {literal}
+          #Login-Username label, #Login-Password label {
+             display: block;
+             float: left;
+             width: 100px;
+             text-align: right;
+             padding-right: 1em;
+          }
+       {/literal}
+       </style>
+       {/fill_slot}
+       {fill_slot name="html_body"} <!-- probably the most impotant line here-->
+       <div style="width:500px; padding-top:100px; margin-left:auto; margin-right:auto;">
+       <div style="width:330px; margin-left:auto; margin-right:auto;"><img src="" /></div>
+          {block name="before_login_form"}
+          {define_slot name="login_form"}
+          <h1>{translate id="Please Login"}Please Login to access this section of the site{/translate}</h1>
+          {if $msg}<div class="portalMessage">{$msg}</div>{/if}
+          <form action="{$ENV.DATAFACE_SITE_HREF}" method="post" class="xataface-login-form">
+          <input type="hidden" name="-action" value="login" />
+          <input type="hidden" name="-redirect" value="{$redirect}" />
+          
+          <fieldset style="">
+          
+             {block name="before_login_username}
+             <div id="Login-Username" style="padding-top:10px;">
+                <label>{translate id="Username"}Username{/translate}:</label>
+                <input type="text" name="UserName" value="{$ENV.REQUEST.UserName}">
+             </div>
+             {block name="after_login_username"}
+             <div id="Login-Password">
+                <label>{translate id="Password"}Password{/translate}:</label>
+                <input type="password" name="Password" value="{$ENV.REQUEST.Password}">
+             </div>
+             {block name="after_login_password"}
+             <input id="Login-submit" name="-submit" type="submit" value="{translate id="scripts.GLOBAL.LABEL_SUBMIT"}Submit{/translate}"/>
+             {block name="after_login_submit"}
+          </fieldset>
+          
+          </form>
+          {actions category="login_actions" var="login_actions"}
+          <ul>
+          {foreach from=$login_actions item="action"}
+              <li><a href="{$action.url}">{$action.label}</a></li>
+          {/foreach}
+          </ul>
+          {/define_slot}
+          {block name="after_login_form"}
+       </div>
+       {/fill_slot}
+    {/use_macro}

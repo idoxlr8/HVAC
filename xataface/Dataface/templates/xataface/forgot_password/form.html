@@ -1,0 +1,24 @@
+{use_macro file="Dataface_Main_Template.html"}
+	{fill_slot name="main_section"}
+	
+		<div class="forgot-password-form">
+			<div class="portalMessage status-message" {if !$error}style="display:none"{/if}>{if $error}{$error|escape}{/if}</div>
+			<script src="{$ENV.DATAFACE_URL}/js/jquery.packed.js"></script>
+			<script src="{$ENV.DATAFACE_URL}/js/forgot_password.js"></script>
+			<h1>Request Password Reset</h1>
+			
+			<div class="forgot-password-form-fields">
+				<select id="reset-password-by">
+					<option value="email">My Email Address is:</option>
+					<option value="username">My username is:</option>
+				</select>
+				
+				<input type="text" id="email-or-username"/>
+				
+				<input type="button" id="submit-button" value="Submit"/>
+			</div>
+		
+		</div>
+	
+	{/fill_slot}
+{/use_macro}

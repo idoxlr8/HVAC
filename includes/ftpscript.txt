@@ -1,0 +1,28 @@
+option batch abort
+option confirm off
+open ftp://c277788:Tim4219@web941.opentransfer.com
+synchronize local D:\xampp\htdocs\ /idoxlr8.com/hvac
+exit
+
+
+# Automatically answer all prompts negatively not to stall
+# the script on errors
+#option batch on
+# Disable overwrite confirmations that conflict with the previous
+#option confirm off
+# Connect using a password
+# open user:password@example.com
+# Connect
+#open ftp://c277788:Tim4219@ftp.96.0.212.1:21
+# Change remote directory
+#cd idoxlr8.com
+#cd zbblock
+#cd vault
+# Force binary mode transfer
+#option transfer binary
+# Download file to the local directory d:\
+#get killed_log.txt D:\
+# Disconnect
+#close
+# Exit WinSCP
+#exit

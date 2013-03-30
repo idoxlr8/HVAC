@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!--
+	// 
+	// Copyright (c) 2008 Beau D. Scott | http://www.beauscott.com
+	// 
+	// Permission is hereby granted, free of charge, to any person
+	// obtaining a copy of this software and associated documentation
+	// files (the "Software"), to deal in the Software without
+	// restriction, including without limitation the rights to use,
+	// copy, modify, merge, publish, distribute, sublicense, and/or sell
+	// copies of the Software, and to permit persons to whom the
+	// Software is furnished to do so, subject to the following
+	// conditions:
+	// 
+	// The above copyright notice and this permission notice shall be
+	// included in all copies or substantial portions of the Software.
+	// 
+	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+	// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+	// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+	// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+	// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+	// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+	// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+	// OTHER DEALINGS IN THE SOFTWARE.
+	// 
+-->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<script type="text/javascript" src="../lib/prototype/prototype.js"></script>
+		<script type="text/javascript" src="../lib/scriptaculous/scriptaculous.js"></script>
+		<script type="text/javascript" src="../src/HelpBalloon.js"></script>
+		<title>HelpBalloon.js 2.0.1 USA Image Map Examples</title>
+
+		<link rel="stylesheet" type="text/css" href="assets/style.css"></link>
+		<script type="text/javascript">
+		<!--
+		//
+		// Override the default settings to point to the parent directory
+		//
+		HelpBalloon.Options.prototype = Object.extend(HelpBalloon.Options.prototype, {
+			icon: '../images/icon.gif',
+			button: '../images/button.png',
+			balloonPrefix: '../images/balloon-'
+		});
+		
+		//-->
+		</script>
+	</head>
+	<body>
+		<div id="header">
+			<div style="float: right"><a href="http://www.beauscott.com">BeauScott.com</a></div>
+			<h1>HelpBalloon.js 2.0 USA Image Map Examples</h1>
+		</div>
+		<div id="content">
+			<div style="text-align: center">
+				<a href="examples.php">Basic Usage Examples</a> | <a href="advanced_examples.php">Advanced Usage Examples</a> | <a href="api.xml">API Documentation</a>
+			</div>
+			<div>
+				This page shows how HelpBalloon.js 2.0 detects when
+			</div>
+			<h2>Traditional Image Maps:</h2>
+			<div>
+				Assign the balloon to an html &lt;AREA&gt;'s ID attribute. HelpBalloon.js will detect this and use the
+				client's (mouse) x/y position as the anchor point for the balloon. I put 9 maps on here so you can see it still works
+				with window scrolling.
+			</div>
+			<img src="assets/us_map.jpg" alt="clickable USA map" width="550" height="367" border="0" usemap="#Map"/>
+			<img src="assets/us_map.jpg" alt="clickable USA map" width="550" height="367" border="0" usemap="#Map"/>
+			<img src="assets/us_map.jpg" alt="clickable USA map" width="550" height="367" border="0" usemap="#Map"/>
+			<img src="assets/us_map.jpg" alt="clickable USA map" width="550" height="367" border="0" usemap="#Map"/>
+			<img src="assets/us_map.jpg" alt="clickable USA map" width="550" height="367" border="0" usemap="#Map"/>
+			<img src="assets/us_map.jpg" alt="clickable USA map" width="550" height="367" border="0" usemap="#Map"/>
+			<img src="assets/us_map.jpg" alt="clickable USA map" width="550" height="367" border="0" usemap="#Map"/>
+			<img src="assets/us_map.jpg" alt="clickable USA map" width="550" height="367" border="0" usemap="#Map"/>
+			<img src="assets/us_map.jpg" alt="clickable USA map" width="550" height="367" border="0" usemap="#Map"/>
+			
+			<map name="Map" id="Map">
+				<area shape="poly" coords="52,143,60,106,23,96,14,137,38,208,83,244,92,210" id="california" href="#" onclick="return false;" />
+				<area shape="poly" coords="88,111,99,62,40,48,23,95" id="oregon" href="#" onclick="return false;" />
+				<area shape="poly" coords="98,61,106,22,60,10,41,15,39,47" id="washington" href="#" onclick="return false;" />
+				<area shape="poly" coords="106,22,114,24,121,72,147,87,142,122,90,110" id="idaho" href="#" onclick="return false;" />
+				<area shape="poly" coords="61,105,114,116,94,209,53,143" id="nevada" href="#" onclick="return false;" />
+				<area shape="poly" coords="100,182,152,190,158,137,140,135,141,124,115,117" id="utah" href="#" onclick="return false;" />
+				<area shape="poly" coords="100,183,151,191,140,266,85,240" id="arizona" href="#" onclick="return false;" />
+				
+				<area shape="poly" coords="115,24,214,39,209,90,146,84,121,72" id="montana" href="#" onclick="return false;" />
+				<area shape="poly" coords="148,86,209,90,205,143,140,134" id="wyoming" href="#" onclick="return false;" />
+				<area shape="poly" coords="157,137,224,145,220,196,151,190" id="colorado" href="#" onclick="return false;" />
+				<area shape="poly" coords="152,191,210,197,204,263,142,266" id="new-mexico" href="#" onclick="return false;" />
+				<area shape="poly" coords="210,77,275,81,272,42,215,39" id="north-dakota" href="#" onclick="return false;" />
+				<area shape="poly" coords="211,79,276,81,276,123,208,117" id="south-dakota" href="#" onclick="return false;" />
+				<area shape="poly" coords="208,117,275,123,286,159,224,157,224,146,205,142" id="nebraska" href="#" onclick="return false;" />
+				<area shape="poly" coords="224,158,289,160,293,199,221,196" id="kansas" href="#" onclick="return false;" />
+				<area shape="poly" coords="211,198,293,200,297,244,241,232,240,206,211,204" id="oklahoma" href="#" onclick="return false;" />
+				<area shape="poly" coords="210,204,239,208,239,231,299,247,303,294,256,349,225,302,189,300,175,266,205,264" id="texas" href="#" onclick="return false;" />
+				<area shape="poly" coords="273,43,333,55,309,90,324,113,277,112" id="minnesota" href="#" onclick="return false;" />
+				<area shape="poly" coords="277,112,324,114,334,133,324,151,282,151" id="iowa" href="#" onclick="return false;" />
+				<area shape="poly" coords="286,153,322,153,346,204,294,207" id="missouri" href="#" onclick="return false;" />
+				<area shape="poly" coords="296,208,343,205,331,251,300,250" id="arkansas" href="#" onclick="return false;" />
+				<area shape="poly" coords="300,254,329,254,327,279,345,279,352,302,303,298" id="louisiana" href="#" onclick="return false;" />
+				<area shape="poly" coords="325,68,358,92,357,125,331,125,311,90" id="wisconsin" href="#" onclick="return false;" />
+				<area shape="poly" coords="332,127,360,126,358,189,345,198,324,155" id="illinois" href="#" onclick="return false;" />
+				
+				<area shape="poly" coords="404,129,395,67,327,68,360,90,367,132" id="michigan" href="#" onclick="return false;" />
+				<area shape="poly" coords="360,133,384,133,389,169,359,186" id="indiana" href="#" onclick="return false;" />
+				<area shape="poly" coords="410,172,392,169,344,203,407,196,415,185" id="kentucky" href="#" onclick="return false;" />
+				<area shape="poly" coords="344,206,422,197,398,220,340,224" id="tennessee" href="#" onclick="return false;" />
+				<area shape="poly" coords="338,225,360,224,360,283,349,284,347,279,328,276" id="mississippi" href="#" onclick="return false;" />
+				<area shape="poly" coords="386,133,424,126,425,155,412,173,390,167" id="ohio" href="#" onclick="return false;" />
+				<area shape="poly" coords="425,152,451,158,426,190,413,176" id="west-virginia" href="#" onclick="return false;" />
+				<area shape="poly" coords="360,225,386,223,396,273,361,284" id="alabama" href="#" onclick="return false;" />
+				<area shape="poly" coords="373,279,433,275,477,360" id="florida" href="#" onclick="return false;" />
+				<area shape="poly" coords="388,223,409,222,437,255,432,273,397,276" id="georgia" href="#" onclick="return false;" />
+				<area shape="poly" coords="410,219,436,215,459,225,440,257" id="south-carolina" href="#" onclick="return false;" />
+				<area shape="poly" coords="423,197,479,190,472,229,436,215,400,219" id="north-carolina" href="#" onclick="return false;" />
+				<area shape="poly" coords="420,196,455,157,479,188" id="virginia" href="#" onclick="return false;" />
+				<area shape="poly" coords="438,153,475,147,485,156,480,187,457,158" id="maryland" href="#" onclick="return false;" />
+				<area shape="poly" coords="426,124,476,117,478,146,429,153" id="pennsylvania" href="#" onclick="return false;" />
+				<area shape="poly" coords="478,123,492,130,492,155,479,148" id="new-jersey" href="#" onclick="return false;" />
+				<area shape="poly" coords="490,112,505,110,523,128,493,123" id="connecticut" href="#" onclick="return false;" />
+				
+				<area shape="poly" coords="423,121,480,72,491,126,477,116" id="new-york" href="#" onclick="return false;" />
+				<area shape="poly" coords="489,103,519,97,514,116,505,109,490,110" id="massachusetts" href="#" onclick="return false;" />
+				<area shape="poly" coords="482,72,497,68,494,99,487,100" id="vermont" href="#" onclick="return false;" />
+				<area shape="poly" coords="499,65,495,99,511,96" id="new-hampshire" href="#" onclick="return false;" />
+				<area shape="poly" coords="511,92,539,61,513,31,502,66" id="maine" href="#" onclick="return false;" />
+				<area shape="poly" coords="42,281,128,280,131,351,42,353" id="alaska" href="#" onclick="return false;" />
+				<area shape="poly" coords="147,305,221,306,221,362,148,362" id="hawaii" href="#" onclick="return false;" />
+			</map>
+			
+			<script type="text/javascript">
+			<!--
+			
+				Event.observe(window, 'load', function(e){
+					// Bulk create the icons for all <areas>
+					$A(document.getElementsByTagName('area')).each(function(obj){
+						new HelpBalloon({
+							title: obj.id,
+							content: obj.id,
+							icon: obj
+						});
+					});
+				});
+			
+			//-->
+			</script>
+		</div>
+	</body>
+</html>

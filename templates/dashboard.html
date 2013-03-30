@@ -1,0 +1,46 @@
+{use_macro file="Dataface_Main_Template.html"}
+    {fill_slot name="main_column"}
+	<table style="width: 100%" cellspacing="1" class="style1">
+	<tr>
+		<td valign="top">
+       <h1>Welcome to the Air Force Management System (AFMS)</h1>
+        
+        <p>This system allows you to manage your Customer Invoicing.  
+
+            <ul>
+                <!-- <li><img src="{$ENV.DATAFACE_URL}/images/file.gif"/> <a href="index.php?-action=login&-cursor=0&-skip=0&-limit=30&-mode=list">Login</a></li> -->
+				
+		{if !$ENV.prefs.hide_user_status}
+		<li><img src="{$ENV.DATAFACE_URL}/images/file.gif"/>
+		{if $ENV.username}
+			{block name="before_user_status_logged_in"}
+			{define_slot name="user_status_logged_in"}{assign var='username' value=$ENV.username}{translate id="Logged in as user" username=$username}Logged in as {$username}{/translate} (<a href="{$APP->url('-action=logout')}" title="{translate id="scripts.GLOBAL.LABEL_LOGOUT}Logout{/translate}">{translate id="scripts.GLOBAL.LABEL_LOGOUT}Logout{/translate}</a>){/define_slot}
+			{block name="after_user_status_logged_in"}
+		{elseif $APP->getAuthenticationTool()}
+			{block name="before_user_status_not_logged_in"}
+			{define_slot name="user_status_not_logged_in"}<a href="{$APP->url('-action=login')}" title="Login">{translate id="scripts.GLOBAL.LABEL_LOGIN"}Login{/translate}</a>{/define_slot}
+			{block name="after_user_status_not_logged_in"}
+		{/if}
+		</li>
+		{/if}
+				<!-- <li><img src="{$ENV.DATAFACE_URL}/images/file.gif"/> <a href="hvac.idoxlr8.com/v1.php">Old Site V1</a></li> -->
+				<li><img src="images/bomb.png"/> <a target="_blank" href="includes/sync.php">Synchronize - Check for updates</a></li>
+				<li><img src="images/bomb.png"/> <a target="_blank" href="backup/backup.php">Backup Database</a></li>
+            </ul>
+				{block name="my_special_block"}
+		</td>
+		<td valign="top">
+		<h1>Weather Forecast For {$ENV.APPLICATION.weathercity}</h1>
+		<iframe name="I1" id="I1" src="weather/index.php" marginwidth="1" marginheight="1" scrolling="no" border="0" frameborder="0" style="height: 600px; width: 350px; float: center">Your browser does not support inline frames or is currently configured not to display inline frames.
+			</iframe>		
+		</td>
+	</tr>
+</table>
+
+	
+ 
+			
+
+
+    {/fill_slot}
+{/use_macro}

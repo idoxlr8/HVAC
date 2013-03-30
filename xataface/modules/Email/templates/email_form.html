@@ -1,0 +1,43 @@
+{*-------------------------------------------------------------------------------
+ * Dataface Web Application Framework
+ * Copyright (C) 2005-2006  Steve Hannah (shannah@sfu.ca)
+ * 
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ *-------------------------------------------------------------------------------
+ *}
+{use_macro file="Dataface_Main_Template.html"}
+
+	{fill_slot name="main_section"}
+		<script language="javascript" type="text/javascript" src="{$ENV.DATAFACE_URL}/js/ajaxgold.js"></script>
+		<script language="javascript" type="text/javascript" src="{$ENV.DATAFACE_URL}/modules/Email/js/email_form.js"></script>
+		<h1>Send Email to Found Set</h1>
+		<p>Please complete the form below to send email to the {$ENV.resultSet->found()} addresses
+		associated with the current found set.  <a href="#" onclick="Xataface.showEmailAddresses('{$querystr}');return false;">Show Email Addresses</a>.
+			<div id="email-addresses">&nbsp;</div>
+		</p>
+		<p>Embed Macro:
+		<select onclick="document.getElementById('content').value += this.options[this.selectedIndex].value">
+		{foreach from=$fields item=field}
+			<option value="%{$field}%">{$field}</option>
+		{/foreach}
+		</select>
+		{if $error}<div id="error">{translate id=$error_i18n}{$error}{/translate}</div>{/if}
+		{block name="before_email_form"}
+		{define_slot name="email_form"}
+		{$email_form}
+		{/define_slot}
+		{block name="after_email_form"}
+	{/fill_slot}
+{/use_macro}

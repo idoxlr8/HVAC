@@ -1,0 +1,9 @@
+<FilesMatch "\.ini$">
+Deny from all
+</FilesMatch>
+
+######### Error Documents
+ErrorDocument 404 /errors/404.php
+ErrorDocument 403 /errors/403.html
+ErrorDocument 500 /errors/500.html
+######## End Error Documents

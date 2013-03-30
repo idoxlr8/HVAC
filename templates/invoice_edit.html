@@ -1,0 +1,217 @@
+{use_macro file=Dataface_Main_Template.html}
+    {fill_slot name=html_body}
+	<table cellpadding="2" cellspacing="3">
+		<tr>
+			<td>
+			<table cellpadding="2" cellspacing="3">
+				<tr><td colspan="4"><p></p></td></tr>
+		    	<tr>
+		<td class="currentLabel">Date:</td>
+		<td>{$elements.date.html}</td>
+
+		</tr>
+		<tr>
+		<td class="currentLabel">Customer:</td>
+		<td colspan="2">{$elements.customer.html}<a href="#" onclick="return openNewWindow('includes/help.php?id=1', '', '400', '200')"><img src="{$elements.customer.field.icon}" /></a></td>
+		</tr>
+		<tr>
+		<td class="currentLabel">Address</td>
+		<td colspan="2">{$elements.address.html}</td>
+		</tr>
+		<tr>
+		<td class="currentLabel">Property</td>
+		<td colspan="2">{$elements.property.html}</td>
+		</tr>
+		<tr>
+		<td class="currentLabel">City/State/Zip</td>
+		<td colspan="2">{$elements.city.html}&nbsp;{$elements.state.html}&nbsp;{$elements.zip.html}</td>
+		</tr>
+		</table>
+   		</td>
+		</tr>
+		<tr>
+		<td>
+		<table cellpadding="2" cellspacing="3">
+		<tr>
+		<td class="currentLabel">Parts</td>
+		<td class="currentLabel">Parts Taxable?</td>
+		<td class="currentLabel">
+			<!--<select name="partstaxable" id="partstaxable">
+				<option selected="selected">Choose</option>
+				<option value="yes">yes</option>
+				<option value="no">no</option>
+			</select>-->
+			{$elements.partstaxable.html}
+		</td>
+		</tr>
+		<tr>
+		<td class="currentLabel" style="width: 43px">Qty</td>
+		<td class="currentLabel" style="width: 682px">Description</td>
+		<td class="currentLabel">Amount</td>
+		</tr>
+		<tr>
+		<td style="width: 43px">{$elements.item1qty.html}</td>
+		<td style="width: 682px">{$elements.item1description.html}</td>
+		<td>{$elements.item1cost.html}</td>
+		</tr>
+		<tr>
+		<td style="width: 43px">{$elements.item2qty.html}</td>
+		<td style="width: 682px">{$elements.item2description.html}</td>
+		<td>{$elements.item2cost.html}</td>
+		</tr>
+		<tr>
+		<td style="width: 43px">{$elements.item3qty.html}</td>
+		<td style="width: 682px">{$elements.item3description.html}</td>
+		<td>{$elements.item3cost.html}</td>
+		</tr>
+		<tr>
+		<td style="width: 43px">{$elements.item4qty.html}</td>
+		<td style="width: 682px">{$elements.item4description.html}</td>
+		<td>{$elements.item4cost.html}</td>
+		</tr>
+		<tr>
+		<td style="width: 43px">{$elements.item5qty.html}</td>
+		<td style="width: 682px">{$elements.item5description.html}</td>
+		<td>{$elements.item5cost.html}</td>
+		</tr>
+		<tr>
+		<td style="width: 43px">{$elements.item6qty.html}</td>
+		<td style="width: 682px">{$elements.item6description.html}</td>
+		<td>{$elements.item6cost.html}</td>
+		</tr>
+		
+		<tr>
+		<td style="width: 43px">{$elements.item7qty.html}</td>
+		<td style="width: 682px">{$elements.item7description.html}</td>
+		<td>{$elements.item7cost.html}</td>
+		</tr>
+		
+		<tr>
+		<td style="width: 43px">{$elements.item8qty.html}</td>
+		<td style="width: 682px">{$elements.item8description.html}</td>
+		<td>{$elements.item8cost.html}</td>
+		</tr>
+		
+		<tr>
+		<td style="width: 43px">{$elements.item9qty.html}</td>
+		<td style="width: 682px">{$elements.item9description.html}</td>
+		<td>{$elements.item9cost.html}</td>
+		</tr>		
+		<tr>
+		<td colspan="3"></td>
+		</tr>
+		<tr>
+		<td colspan="3"></td>
+		</tr>
+		<tr>
+		<td class="currentLabel">Service</td>
+		<td class="currentLabel">Labor Taxable?</td>
+		<td class="currentLabel">
+			<!--<select name="labortaxable" id="labortaxable">
+				<option selected="selected">Choose</option>
+				<option value="yes">yes</option>
+				<option value="no">no</option>
+			</select>-->
+		{$elements.labortaxable.html}			
+		</td>
+		</tr>
+		<tr>
+		<td class="currentLabel">Hrs</td>
+		<td class="currentLabel">Description</td>
+		<td class="currentLabel">Amount</td>
+		</tr>
+		<tr>
+		<td style="width: 43px">{$elements.labor1qty.html}</td>
+		<td style="width: 682px">{$elements.labor1description.html}</td>
+		<td>{$elements.labor1cost.html}</td>
+		</tr>
+		<tr>
+		<td style="width: 43px">{$elements.labor2qty.html}</td>
+		<td style="width: 682px">{$elements.labor2description.html}</td>
+		<td>{$elements.labor2cost.html}</td>
+		</tr>
+		<tr>
+		<td style="width: 43px">{$elements.labor3qty.html}</td>
+		<td style="width: 682px">{$elements.labor3description.html}</td>
+		<td>{$elements.labor3cost.html}</td>
+		</tr>
+		</table>
+		</td>
+		</tr>
+		<tr>
+		<td>
+		
+		<table cellpadding="2" cellspacing="3" style="width: 100%">
+		<tr><td style="width: 70%" class="infolabel"><a href="#" onclick="return openNewWindow('includes/help.php?id=1', '', '400', '200')"><img src="{$elements.payment1.field.icon}" /></a></td>
+		<td style="width: 15%" class="currentLabel">
+		All Payments:&nbsp; </td><td style="width: 15%">
+		{$elements.payment1.html}</td></tr>
+		<tr><td style="width: 70%" class="infolabel">Related <em>"Payments"</em> Record Must Be Changed If You Change This!</td>
+		<td style="width: 15%" class="currentLabel">
+		Payment Date:&nbsp; </td><td style="width: 15%">
+		{$elements.paymentdate1.html}</td></tr>
+		<tr><td style="width: 70%" class="infolabel">
+		&nbsp;</td><td style="width: 15%" class="currentLabel">
+		Parts Total:&nbsp; </td><td style="width: 15%">
+		{$elements.partstotal.html}</td></tr>
+		<tr><td style="width: 70%" class="infolabel">
+		&nbsp;</td><td style="width: 15%" class="currentLabel">
+		Labor Total:&nbsp; </td><td style="width: 15%">
+		{$elements.labortotal.html}</td></tr>
+		<tr><td style="width: 70%" class="infolabel">
+		&nbsp;</td><td style="width: 15%" class="currentLabel">
+		Sub Total:&nbsp; </td><td style="width: 15%">
+		{$elements.subtotal.html}</td></tr>
+		<tr><td style="width: 70%" class="infolabel">
+		&nbsp;</td><td style="width: 15%" class="currentLabel">
+		Parts Tax:&nbsp; </td><td style="width: 15%">
+		<input name="tax1" id="tax1" type="text" size="30" style="width: 232px"></td></tr>
+		<tr><td style="width: 70%" class="infolabel">
+		&nbsp;</td><td style="width: 15%" class="currentLabel">
+		Labor Tax:&nbsp; </td><td style="width: 15%">
+		<input name="tax2" id="tax2" type="text" size="30" style="width: 232px"></td></tr>
+		<tr><td style="width: 70%" class="infolabel">
+		&nbsp;</td><td style="width: 15%" class="currentLabel">
+		Total Tax:&nbsp; </td><td style="width: 15%">
+		{$elements.tax.html}</td></tr>
+		<tr><td style="width: 70%" class="infolabel">
+		&nbsp;</td><td style="width: 15%" class="currentLabel">
+		Total:&nbsp; </td><td style="width: 15%">
+				{$elements.total.html}</td></tr>
+		<tr><td style="width: 70%" class="infolabel">
+		&nbsp;</td><td style="width: 15%" class="currentLabel">
+		Update:&nbsp; </td><td class="infolabel" style="width: 15%">
+		<strong><a href="#" onclick="updatetotal()">Update Totals</a></strong></td></tr>
+		<tr>
+		<td colspan="3">
+		&nbsp;</td>
+		</tr>
+		<tr>
+		<td class="currentLabel" colspan="3">Comments For Customer</td>
+		</tr>
+		<tr>
+		<td colspan="3">
+		{$elements.custcomments.html}</td>
+		</tr>
+		<tr>
+		<td class="currentLabel" colspan="3">Personal Comments</td>
+		</tr>
+		<tr>
+		<td colspan="3">{$elements.notes.html}</td>
+		</tr>
+		<tr>
+		<td colspan="3"><center><b>Be Sure To  <a href="#" onclick="updatetotal()"> Update Totals</a></b></center></td>
+		</tr>
+				<tr>
+					<td colspan="3"></td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+	</table>
+
+
+
+
+   {/fill_slot}
+{/use_macro}

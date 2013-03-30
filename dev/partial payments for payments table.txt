@@ -1,0 +1,5 @@
+SELECT * FROM tbl_scores RIGHT JOIN tbl_users ON tbl_scores.user_id = tbl_users.user_id
+
+SELECT * FROM payments RIGHT JOIN invoice ON payments.invoiceid = payments.id
+
+select invoice.id, invoice.date, invoice.customer, invoice.total, invoice.payment1, invoice.paymentdate1 from invoice left join payments on invoice.id = payments.invoiceid WHERE invoice.payment1 > 0 and invoice.total > invoice.payment1

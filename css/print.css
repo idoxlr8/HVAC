@@ -1,0 +1,108 @@
+﻿body	{
+	color: #000;
+	font: 11px arial, helvetica, sans-serif;
+	padding: 0;
+}
+.txtbox {
+	border-width: 1px;
+	border-color: #0099FF;
+	width: 235px;
+	border-bottom-style: solid;
+	border-left-style: solid;
+}
+.txtarea {
+	border: 1px solid #0099FF;
+}
+.centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+.alignright {
+	display: block;
+	margin-left: auto;
+	float: right;
+}
+
+.tablelist {
+	border: 1px solid #000000;
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+}
+.style2 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style3 {
+	font-size: x-small;
+}
+.style4 {
+	text-align: center;
+}
+.cell_header {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #6699FF;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #6699FF;
+	background-color: #CCCCCC;
+	font-weight: bold;
+}
+.cell {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #6699FF;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #6699FF;
+	height: 16px;
+}
+
+.cell_right_end
+ {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #6699FF;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #6699FF;
+	height: 16px;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #6699FF;
+}
+
+.payment {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #6699FF;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #6699FF;
+	color: #FF0000;
+}
+
+.txtright {
+	text-align: right;
+}
+.cellheader_alignright {
+	border-left: 1px solid #6699FF;
+	border-bottom: 1px solid #6699FF;
+	background-color: #CCCCCC;
+	font-weight: bold;
+	text-align: right;
+}
+.style5 {
+	text-align: center;
+	font-size: x-small;
+}
+.notice {
+	color: #FFFFFF;
+	background-color: #000000;
+	text-align: center;
+	font-size: x-small;
+}

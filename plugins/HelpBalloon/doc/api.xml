@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	// 
+	// Copyright (c) 2008 Beau D. Scott | http://www.beauscott.com
+	// 
+	// Permission is hereby granted, free of charge, to any person
+	// obtaining a copy of this software and associated documentation
+	// files (the "Software"), to deal in the Software without
+	// restriction, including without limitation the rights to use,
+	// copy, modify, merge, publish, distribute, sublicense, and/or sell
+	// copies of the Software, and to permit persons to whom the
+	// Software is furnished to do so, subject to the following
+	// conditions:
+	// 
+	// The above copyright notice and this permission notice shall be
+	// included in all copies or substantial portions of the Software.
+	// 
+	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+	// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+	// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+	// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+	// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+	// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+	// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+	// OTHER DEALINGS IN THE SOFTWARE.
+	// 
+-->
+<?xml-stylesheet type="text/xsl" href="assets/docTemplate.xsl"?>
+<classes xmlns="http://www.beauscott.com/ref/2008/pbcd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.beauscott.com/ref/2008/pbcd assets/PrototypeBasedClassDescriptor.xsd">
+
+	<class name="HelpBalloon">
+		<description>
+			A prototype.js based help balloon / tool tip / diaglog
+			bubble
+		</description>
+		<properties>
+			<property name="ELEMENT_CLASS_NAME" scope="public"
+				type="String" static="true" default="HelpBalloon">
+				<description>
+					CSS Classname to look for when doing auto link
+					associations.
+				</description>
+			</property>
+			<property name="_balloons" scope="public"
+				type="Array" static="true">
+				<description>
+					Global array of all HelpBalloon instances.
+					(Cheaper than document.getElementByClassName with a 
+					property check)
+				</description>
+			</property>
+			<property name="_lastBalloon" scope="private"
+				type="Element">
+				<description>
+					Used at render time to measure the dimensions of the
+					loaded balloon
+				</description>
+			</property>
+			<property name="_titleString" scope="private"
+				type="String">
+				<description>
+					The local store of 'title'. Will change if the
+					balloon is making a remote call unless options.title
+					is specified
+				</description>
+			</property>
+			<property name="balloonCoords" scope="public"
+				type="Array">
+				<description>
+					Stores the balloon coordinates
+				</description>
+			</property>
+			<property name="balloonDimensions" scope="public"
+				type="Array">
+				<description>Width,height of the balloons</description>
+			</property>
+			<property name="balloons" scope="public" type="Array">
+				<description>
+					Balloon image path prefix. There are 4 button
+					images, numerically named, starting with 0.
+				</description>
+			</property>
+			<property name="bgContainer" scope="public"
+				type="Element">
+				<description>
+					Background container (houses the balloon images)
+				</description>
+			</property>
+			<property name="button" scope="public" type="Element">
+				<description>Closing button element</description>
+			</property>
+			<property name="closer" scope="public" type="Element">
+				<description>
+					The closer object. This can be the same as button,
+					but could also be a div with a png loaded as the
+					back ground, browser dependent.
+				</description>
+			</property>
+			<property name="container" default="images/balloon-"
+				scope="public" type="Element">
+				<description>
+					Containing element of the balloon
+				</description>
+			</property>
+			<property name="content" scope="public" type="Element">
+				<description>Content container</description>
+			</property>
+			<property name="drawn" scope="public" type="Boolean">
+				<description>Rendering status</description>
+			</property>
+			<property name="icon" scope="public" type="Element">
+				<description>
+					A reference to the anchoring element/icon
+				</description>
+			</property>
+			<property name="id" scope="public" type="String">
+				<description>ID for HelpBalloon</description>
+			</property>
+			<property name="inner" scope="public" type="Element">
+				<description>Inner content container</description>
+			</property>
+			<property name="options" scope="public"
+				type="HelpBalloon.Options">
+				<description>Configuration options</description>
+			</property>
+			<property static="true" scope="public" type="Number"
+				name="POS_BOTTOM_LEFT" default="2">
+				<description>
+					Enumerated value for the bottom-left
+					rendering position.
+				</description>
+			</property>
+			<property static="true" scope="public" type="Number"
+				name="POS_BOTTOM_RIGHT" default="3">
+				<description>
+					Enumerated value for the bottom-right
+					rendering position.
+				</description>
+			</property>
+			<property static="true" scope="public" type="Number"
+				name="POS_DYNAMIC" default="-1">
+				<description>
+					Enumerated value for dynamic rendering position.
+				</description>
+			</property>
+			<property static="true" scope="public" type="Number"
+				name="POS_TOP_LEFT" default="0">
+				<description>
+					Enumerated value for the top-left rendering
+					position.
+				</description>
+			</property>
+			<property static="true" scope="public" type="Number"
+				name="POS_TOP_RIGHT" default="1">
+				<description>
+					Enumerated value for the top-right
+					rendering position.
+				</description>
+			</property>
+			<property name="titleContainer" scope="public"
+				type="Element">
+				<description>Title container</description>
+			</property>
+			<property name="visible" scope="public" type="Boolean">
+				<description>The balloons visibility state</description>
+			</property>
+		</properties>
+		<methods>
+			<method name="registerClassLinks" constructor="true" scope="public"
+				returnType="void" static="true">
+				<description>The class constructor</description>
+				<parameters>
+					<parameter name="e" type="Event">
+						<description>The event</description>
+					</parameter>
+				</parameters>
+			</method>
+			<method name="initialize" constructor="true" scope="public"
+				returnType="void">
+				<description>The class constructor</description>
+				<parameters>
+					<parameter name="options" type="HelpBalloon.Options"
+						required="false">
+						<description>
+							A subset of options to initialize the balloon with.
+						</description>
+					</parameter>
+				</parameters>
+			</method>
+			<method name="_afterHide" scope="private"
+				returnType="void">
+				<description>The class constructor</description>
+			</method>
+			<method name="_afterShow" scope="private"
+				returnType="void">
+				<description>
+					Sets the container to block styling and hides the
+					elements below the container (if in IE)
+				</description>
+			</method>
+			<method name="_draw" scope="private" returnType="void">
+				<description>Renders the Balloon</description>
+			</method>
+			<method name="_getWeirdAPIElements" scope="private"
+				returnType="Array">
+				<description>
+					Determines which elements need to be hidden. (For
+					IE)
+				</description>
+			</method>
+			<method name="_getXY" scope="private" returnType="Object">
+				<description>
+					Gets the current position of the obj. Object
+					returned in (x, y, x2, y2) format
+				</description>
+			</method>
+			<method name="_hideLowerElements" scope="private"
+				returnType="void">
+				<description>
+					Hides elements below the balloon. (For IE)
+				</description>
+			</method>
+			<method name="_hideOtherHelps" scope="private"
+				returnType="void">
+				<description>The class constructor</description>
+			</method>
+			<method name="_isChild" scope="private"
+				returnType="Boolean">
+				<description>
+					Determines if the object is a child of the balloon
+					element.
+				</description>
+			</method>
+			<method name="_isOver" scope="private"
+				returnType="Boolean">
+				<description>
+					Determines if the balloon is appearing over the
+					specified element.
+				</description>
+				<parameters>
+					<parameter name="obj" required="true"
+						type="Element">
+						<description>
+							Element to check parentage of.
+						</description>
+					</parameter>
+				</parameters>
+			</method>
+			<method name="_reposition" scope="private"
+				returnType="void">
+				<description>
+					Redraws the balloon based on the current coordinates
+					of the icon.
+				</description>
+			</method>
+			<method name="_showLowerElements" scope="private"
+				returnType="void">
+				<description>
+					Restores visibility of elements under the balloon.
+					(For IE)
+				</description>
+			</method>
+			<method name="hide" scope="public" returnType="void">
+				<description>Hides the balloon</description>
+			</method>
+			<method name="show" scope="public" returnType="void">
+				<description>Shows the balloon</description>
+			</method>
+			<method name="toggle" scope="public" returnType="void">
+				<description>Toggles the help balloon</description>
+			</method>
+		</methods>
+	</class>
+
+	<class name="HelpBalloon.Options">
+		<description>
+			Helper class for defining options for the HelpBalloon object
+		</description>
+		<properties>
+			<property name="altText" type="String" default="null"
+				scope="public">
+				<description>Alt text of the help icon</description>
+			</property>
+			<property name="anchorPosition" default="center middle"
+				scope="public" type="String">
+				<description>
+					Position of the balloon's anchor relative to the
+					icon element. Combine one horizontal indicator
+					(left, center, right) and one vertical indicator
+					(top, middle, bottom). Numeric values can also be
+					used in an X Y order. So a value of 9 13 would place
+					the anchor 9 pixels from the left and 13 pixels
+					below the top. (0,0 is top left). If values are
+					greater than the width or height the width or height
+					of the anchor are used instead. If less than 0, 0 is
+					used.
+				</description>
+			</property>
+			<property name="autoHideTimeout" default="0"
+				scope="public" type="Number">
+				<description>
+					Number of milliseconds to hide the balloon after 
+					showing and after the mouse is not over the balloon.
+	 				A value of 0 means it will not auto-hide
+				</description>
+			</property>
+			<property name="balloonPrefix" default="images/balloon-"
+				scope="public" type="String">
+				<description>
+					Balloon image path prefix. There are 4 button
+					images, numerically named, starting with 0.
+				</description>
+			</property>
+			<property name="balloonStyle" scope="public"
+				type="Object">
+				<description>Default Balloon styling</description>
+			</property>
+			<property name="balloonSuffix" scope="public" type="String"
+				default=".png">
+				<description>
+					The image filename suffix, including the file
+					extension
+				</description>
+			</property>
+			<property name="button" scope="public" type="String"
+				default="images/button.png">
+				<description>Closing button image path</description>
+			</property>
+			<property name="buttonX" scope="public" type="Number"
+				default="246">
+				<description>
+					X coordinate of the closing button in relation to
+					the balloon container
+				</description>
+			</property>
+			<property name="buttonY" scope="public" type="Number"
+				default="35">
+				<description>
+					Y coordinate of the closing button in relation to
+					the balloon container
+				</description>
+			</property>
+			<property name="cacheRemoteContent" scope="public"
+				type="Boolean" default="true">
+				<description>
+					Flag indicating cache the request result. If this is
+					false, every time the balloon is shown, it will
+					retrieve the remote url and parse it before the
+					balloon appears, updating the content. Otherwise, it
+					will make the call once and use the same content
+					with each subsequent showing.
+				</description>
+			</property>
+			<property name="content" scope="public" type="String"
+				default="null">
+				<description>Static content of the balloon</description>
+			</property>
+			<property name="contentMargin" scope="public" type="Number"
+				default="null">
+				<description>The distance from the outside of the balloon to the outer edge of the content box.</description>
+			</property>
+			<property name="balloonSuffix" scope="public" type="String"
+				default="35">
+				<description>
+					Vertical and horizontal margin of the content pane.
+					This must be equal on all sides due to the way the
+					balloon renders itself.
+				</description>
+			</property>
+			<property name="dataURL" scope="public" type="String"
+				default="null">
+				<description>
+					RL to pull the title/content XML
+				</description>
+			</property>
+			<property name="hideOtherBalloonsOnDisplay" scope="public"
+				type="Boolean" default="true">
+				<description>
+					Flag indication whether to automatically hide any
+					other visible HelpBalloon on the page before showing
+					the current one.
+				</description>
+			</property>
+			<property name="hideUnderElements" scope="public"
+				type="Boolean" default="true">
+				<description>
+					Flag indicating whether to hide the elements under
+					the balloon in IE. Setting this to false can cause
+					rendering issues in Internet Explorer as some
+					elements appear on top of the balloon if they're not
+					hidden.
+				</description>
+			</property>
+			<property name="icon" scope="public" type="Object"
+				default="images/icon.gif">
+				<description>
+					URL to the anchoring icon image file to use. This
+					can also be a direct reference to an existing
+					element if you're using that as your anchoring icon.
+				</description>
+			</property>
+			<property name="iconStyle" scope="public" type="Object">
+				<description>Icon custom styling</description>
+			</property>
+			<property name="method" scope="public" type="String"
+				default="get">
+				<description>
+					Request method for dynamic content. (get, post)
+				</description>
+			</property>
+			<property name="returnElement" scope="public" type="Boolean"
+				default="false">
+				<description>
+					For use with embedding this object into another. If
+					true, the icon is not created and not appeneded to
+					the DOM at construction.
+				</description>
+			</property>
+			<property name="title" scope="public" type="String"
+				default="null">
+				<description>Static title of the balloon</description>
+			</property>
+			<property name="titleStyle" scope="public" type="Object"
+				default="null">
+				<description>Default Title Bar style</description>
+			</property>
+			<property name="useEvent" scope="public" type="Array"
+				default="['click']">
+				<description>
+					The event type to listen for on the icon to show the
+					balloon.
+				</description>
+			</property>
+			<property name="hideEffect" scope="public" type="Function"
+				default="Effect.Fade if Scriptaculous is available, otherwise NULL">
+				<description>
+					The Scriptaculous (or compatible) effect function for hiding the
+					balloon.
+				</description>
+			</property>
+			<property name="hideEffectOptions" scope="public" type="Function"
+				default="{duration: 0.2}">
+				<description>
+					The hide-effect options. Note: afterFinish will be overwritten with
+					internal logic.
+				</description>
+			</property>
+			<property name="showEffect" scope="public" type="Function"
+				default="Effect.Appear if Scriptaculous is available, otherwise NULL">
+				<description>
+					The Scriptaculous (or compatible) effect function for showing the
+					balloon.
+				</description>
+			</property>
+			<property name="showEffectOptions" scope="public" type="Function"
+				default="{duration: 0.2}">
+				<description>
+					The show-effect options. Note: afterFinish will be overwritten with
+					internal logic.
+				</description>
+			</property>
+		</properties>
+		<methods>
+			<method name="initialize" constructor="true"
+				returnType="void" scope="public">
+				<parameters>
+					<parameter name="properties"
+						type="HelpBalloon.Options" required="true">
+					</parameter>
+				</parameters>
+			</method>
+		</methods>
+	</class>
+</classes>

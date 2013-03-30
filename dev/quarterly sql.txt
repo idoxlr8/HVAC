@@ -1,0 +1,3 @@
+SELECT SUM(payment1) AS sub_total FROM invoice WHERE MONTH IN ('jan', 'feb', 'mar') AND year LIKE 2012
+
+SELECT SUM(labortotal) AS labor_ttl, SUM(partstotal) AS parts_ttl, SUM(subtotal) AS sub_ttl, SUM(tax) AS tax_ttl, SUM(total) AS total_ttl, SUM(payment1) AS payment1_total FROM invoice WHERE MONTH IN ('jan', 'feb', 'mar') AND year LIKE 2012

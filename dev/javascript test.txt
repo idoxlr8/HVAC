@@ -1,0 +1,85 @@
+function updatetotal() {
+//var partstax;
+//var labortax;
+//var taxtotal;
+
+	//combine parts totals//
+	document.getElementById('partstotal').value = (document.getElementById('item1cost').value -0) + (document.getElementById('item2cost').value -0) + (document.getElementById('item3cost').value -0)
+ + (document.getElementById('item4cost').value -0) + (document.getElementById('item5cost').value -0) + (document.getElementById('item6cost').value -0) + (document.getElementById('item7cost').value -0)
+  + (document.getElementById('item8cost').value -0) + (document.getElementById('item9cost').value -0);
+	
+	//combine labor totals//
+	document.getElementById('labortotal').value = (document.getElementById('labor1cost').value -0) + (document.getElementById('labor2cost').value -0) + (document.getElementById('labor3cost').value -0);
+
+	//combine tax variables//
+	if (document.getElementById('taxable').checked == true)
+		{
+			//var partstax = formatCurrency((document.getElementById('partstotal').value -0) *.0825);
+			labortax = formatCurrency((document.getElementById('labortotal').value -0) *.0825);
+			taxtotal = labortax;
+			document.getElementById('tax').value = taxtotal;
+		}
+		
+	if (document.getElementById('taxable2').checked == true)
+		{
+			partstax = formatCurrency((document.getElementById('partstotal').value -0) *.0825);
+			//labortax = formatCurrency((document.getElementById('labortotal').value -0) *.0825);
+			taxtotal2 = partstax;
+			document.getElementById('tax1').value = taxtotal2;
+		}
+
+	//combine parts, labor into subtotal//
+	document.getElementById('subtotal').value = (document.getElementById('labortotal').value -0) + (document.getElementById('partstotal').value -0);
+	
+	//combine sub total and tax for total//
+	
+	document.getElementById('total').value = (document.getElementById('tax').value -0) + (document.getElementById('tax1').value -0) + (document.getElementById('subtotal').value -0);
+}
+-----------------------------------------------------------
+function updatetax() {
+	if (document.getElementById('taxable').checked == true)
+		{
+		document.getElementById('tax').value = formatCurrency((document.getElementById('labortotal').value -0) *.0825);
+		alert ('Labor Tax Has Been Included In This Invoice.');
+		}
+		
+	else if (document.getElementById('partstax').checked == true)
+		{
+		document.getElementById('tax').value = formatCurrency((document.getElementById('partstotal').value -0) *.0825);
+		alert ('Parts Tax Has Been Included In This Invoice.');
+		}
+		
+	else if (document.getElementById('taxable').checked == true && document.getElementById('partstax').checked == true)
+		{
+		document.getElementById('tax').value = formatCurrency((document.getElementById('subtotal').value -0) *.0825);
+		alert ('Labor And Parts Tax Has Been Included In This Invoice.');
+		}
+
+	else
+		{
+		document.getElementById('tax').value = "";
+		alert ('No Taxes Have Been Included In This Invoice.');
+		}
+}
+
+<a href="#" onclick="updatesum();updatepartstax();updatelabortax();updatetotal();"> Update Totals</a>
+(document.getElementById('partstotal').value -0) + (document.getElementById('labortotal').value -0)
+
+
+function updatelabortax() {
+	if (document.getElementById('taxable').checked == true)
+		{
+		document.getElementById('tax').value = formatCurrency((document.getElementById('labortotal').value -0) *.0825);
+		alert ('Labor Tax Has Been Included In This Invoice.');
+		}
+
+}
+
+function updatepartstax() {
+	if (document.getElementById('partstax').checked == true)
+		{
+		document.getElementById('tax').value = formatCurrency((document.getElementById('partstotal').value -0) *.0825) + (document.getElementById('tax').value -0);
+		
+		alert ('Parts Tax Has Been Included In This Invoice.');
+		}
+}

@@ -1,0 +1,37 @@
+﻿
+
+    <HTML><HEAD>
+    <TITLE>ASP Web Pro</TITLE>
+
+    <SCRIPT LANGUAGE="JavaScript"'>
+    <!--
+    function validateForm(){
+    if(document.ItemList.Item.selectedIndex==0)
+    {
+    alert("Please select an Item.");
+    document.ItemList.Item.focus();
+    return false;
+    }
+    return true;
+    }
+    //-->
+    </SCRIPT>
+    </HEAD>
+
+    <BODY>
+    Please choose an item from the drop down menu:
+
+    <form name="ItemList" method="post" action="usersupdate.asp" onSubmit="return validateForm()">
+    <table width="100%" border="0">
+    <tr>
+    <td width="135">Choose a username: </td>
+    <td>
+    <select name="Item">
+    <option value selected>-- SELECT --</option>
+    <option value>Apples</option>
+    <option value>Oranges</option>
+    </select>
+    <input type="submit" name="Submit" value="Submit">
+    </td></tr></table></form>
+    </BODY>
+    </HTML>

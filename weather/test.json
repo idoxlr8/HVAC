@@ -1,0 +1,481 @@
+
+{
+	"response": {
+		"version": "0.1"
+		,"termsofService": "http://www.wunderground.com/weather/api/d/terms.html"
+		,"features": {
+		"forecast": 1
+		,
+		"conditions": 1
+		,
+		"alerts": 1
+		}
+	}
+		,	"current_observation": {
+		"image": {
+		"url":"http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
+		"title":"Weather Underground",
+		"link":"http://www.wunderground.com"
+		},
+		"display_location": {
+		"full":"San Angelo, TX",
+		"city":"San Angelo",
+		"state":"TX",
+		"state_name":"Texas",
+		"country":"US",
+		"country_iso3166":"US",
+		"zip":"76901",
+		"latitude":"31.51811981",
+		"longitude":"-100.51571655",
+		"elevation":"585.00000000"
+		},
+		"observation_location": {
+		"full":"WT_Meso 7NW San Angelo, TX, San Angelo, Texas",
+		"city":"WT_Meso 7NW San Angelo, TX, San Angelo",
+		"state":"Texas",
+		"country":"US",
+		"country_iso3166":"US",
+		"latitude":"31.542629",
+		"longitude":"-100.513283",
+		"elevation":"1957 ft"
+		},
+		"estimated": {
+		},
+		"station_id":"MSJST2",
+		"observation_time":"Last Updated on January 9, 6:30 AM CST",
+		"observation_time_rfc822":"Wed, 09 Jan 2013 06:30:00 -0600",
+		"observation_epoch":"1357734600",
+		"local_time_rfc822":"Wed, 09 Jan 2013 06:53:48 -0600",
+		"local_epoch":"1357736028",
+		"local_tz_short":"CST",
+		"local_tz_long":"America/Chicago",
+		"local_tz_offset":"-0600",
+		"weather":"Light Rain",
+		"temperature_string":"48 F (8.9 C)",
+		"temp_f":48,
+		"temp_c":8.9,
+		"relative_humidity":"91%",
+		"wind_string":"From the NNE at 9 MPH Gusting to 17.0 MPH",
+		"wind_dir":"NNE",
+		"wind_degrees":33,
+		"wind_mph":9,
+		"wind_gust_mph":"17.0",
+		"wind_kph":14.5,
+		"wind_gust_kph":"27.4",
+		"pressure_mb":"1017",
+		"pressure_in":"30.04",
+		"pressure_trend":"-",
+		"dewpoint_string":"45 F (7 C)",
+		"dewpoint_f":45,
+		"dewpoint_c":7,
+		"heat_index_string":"NA",
+		"heat_index_f":"NA",
+		"heat_index_c":"NA",
+		"windchill_string":"44 F (7 C)",
+		"windchill_f":"44",
+		"windchill_c":"7",
+		"feelslike_string":"44 F (7 C)",
+		"feelslike_f":"44",
+		"feelslike_c":"7",
+		"visibility_mi":"8.0",
+		"visibility_km":"12.9",
+		"solarradiation":"0",
+		"UV":"0",
+		"precip_1hr_string":"0.01 in ( 0 mm)",
+		"precip_1hr_in":"0.01",
+		"precip_1hr_metric":" 0",
+		"precip_today_string":"-999.00 in (-25375 mm)",
+		"precip_today_in":"-999.00",
+		"precip_today_metric":"-25375",
+		"icon":"rain",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/nt_rain.gif",
+		"forecast_url":"http://www.wunderground.com/US/TX/San_Angelo.html",
+		"history_url":"http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=MSJST2",
+		"ob_url":"http://www.wunderground.com/cgi-bin/findweather/getForecast?query=31.542629,-100.513283"
+	}
+		,
+	"forecast":{
+		"txt_forecast": {
+		"date":"3:00 AM CST",
+		"forecastday": [
+		{
+		"period":0,
+		"icon":"rain",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/rain.gif",
+		"title":"Wednesday",
+		"fcttext":"Overcast with rain showers. Fog early. High of 54F. Breezy. Winds from the NNE at 15 to 20 mph. Chance of rain 80% with rainfall amounts near 0.4 in. possible.",
+		"fcttext_metric":"Overcast with rain showers. Fog early. High of 12C. Windy. Winds from the NNE at 20 to 30 km/h. Chance of rain 80% with rainfall amounts near 11.2 mm possible.",
+		"pop":"80"
+		}
+		,
+		{
+		"period":1,
+		"icon":"chancerain",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/chancerain.gif",
+		"title":"Wednesday Night",
+		"fcttext":"Overcast with a chance of rain. Low of 43F. Winds from the NE at 5 to 20 mph shifting to the SW after midnight. Chance of rain 40% with rainfall amounts near 0.4 in. possible.",
+		"fcttext_metric":"Overcast with a chance of rain. Low of 6C. Breezy. Winds from the NE at 10 to 25 km/h shifting to the SW after midnight. Chance of rain 40% with rainfall amounts near 9.1 mm possible.",
+		"pop":"40"
+		}
+		,
+		{
+		"period":2,
+		"icon":"partlycloudy",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
+		"title":"Thursday",
+		"fcttext":"Partly cloudy. High of 57F. Breezy. Winds from the WSW at 15 to 20 mph.",
+		"fcttext_metric":"Partly cloudy. High of 14C. Windy. Winds from the WSW at 20 to 30 km/h.",
+		"pop":"10"
+		}
+		,
+		{
+		"period":3,
+		"icon":"clear",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/clear.gif",
+		"title":"Thursday Night",
+		"fcttext":"Clear. Low of 45F. Winds from the SSW at 10 to 15 mph.",
+		"fcttext_metric":"Clear. Low of 7C. Breezy. Winds from the SSW at 20 to 25 km/h.",
+		"pop":"0"
+		}
+		,
+		{
+		"period":4,
+		"icon":"partlycloudy",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
+		"title":"Friday",
+		"fcttext":"Clear in the morning, then partly cloudy. High of 72F. Breezy. Winds from the SSW at 10 to 20 mph.",
+		"fcttext_metric":"Clear in the morning, then partly cloudy. High of 22C. Windy. Winds from the SSW at 15 to 30 km/h.",
+		"pop":"0"
+		}
+		,
+		{
+		"period":5,
+		"icon":"cloudy",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/cloudy.gif",
+		"title":"Friday Night",
+		"fcttext":"Mostly cloudy in the evening, then overcast. Fog overnight. Low of 43F. Winds from the South at 5 to 15 mph shifting to the WSW after midnight.",
+		"fcttext_metric":"Mostly cloudy in the evening, then overcast. Fog overnight. Low of 6C. Breezy. Winds from the South at 10 to 25 km/h shifting to the WSW after midnight.",
+		"pop":"0"
+		}
+		,
+		{
+		"period":6,
+		"icon":"mostlycloudy",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/mostlycloudy.gif",
+		"title":"Saturday",
+		"fcttext":"Partly cloudy with a chance of rain in the morning, then overcast. Fog early. High of 54F. Winds from the North at 5 to 15 mph.",
+		"fcttext_metric":"Partly cloudy with a chance of rain in the morning, then overcast. Fog early. High of 12C. Breezy. Winds from the North at 10 to 20 km/h.",
+		"pop":"0"
+		}
+		,
+		{
+		"period":7,
+		"icon":"partlycloudy",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
+		"title":"Saturday Night",
+		"fcttext":"Overcast in the evening, then clear. Low of 28F. Winds from the NE at 10 to 15 mph.",
+		"fcttext_metric":"Overcast in the evening, then clear. Low of -2C. Breezy. Winds from the NE at 20 to 25 km/h.",
+		"pop":"0"
+		}
+		]
+		},
+		"simpleforecast": {
+		"forecastday": [
+		{"date":{
+	"epoch":"1357786800",
+	"pretty":"9:00 PM CST on January 09, 2013",
+	"day":9,
+	"month":1,
+	"year":2013,
+	"yday":8,
+	"hour":21,
+	"min":"00",
+	"sec":0,
+	"isdst":"0",
+	"monthname":"January",
+	"weekday_short":"Wed",
+	"weekday":"Wednesday",
+	"ampm":"PM",
+	"tz_short":"CST",
+	"tz_long":"America/Chicago"
+},
+		"period":1,
+		"high": {
+		"fahrenheit":"54",
+		"celsius":"12"
+		},
+		"low": {
+		"fahrenheit":"43",
+		"celsius":"6"
+		},
+		"conditions":"Rain Showers",
+		"icon":"rain",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/rain.gif",
+		"skyicon":"cloudy",
+		"pop":80,
+		"qpf_allday": {
+		"in": 1.06,
+		"mm": 26.9
+		},
+		"qpf_day": {
+		"in": 0.44,
+		"mm": 11.2
+		},
+		"qpf_night": {
+		"in": 0.36,
+		"mm": 9.1
+		},
+		"snow_allday": {
+		"in": 0,
+		"cm": 0
+		},
+		"snow_day": {
+		"in": 0,
+		"cm": 0
+		},
+		"snow_night": {
+		"in": 0,
+		"cm": 0
+		},
+		"maxwind": {
+		"mph": 16,
+		"kph": 26,
+		"dir": "NNE",
+		"degrees": 19
+		},
+		"avewind": {
+		"mph": 13,
+		"kph": 21,
+		"dir": "NE",
+		"degrees": 42
+		},
+		"avehumidity": 82,
+		"maxhumidity": 100,
+		"minhumidity": 69
+		}
+		,
+		{"date":{
+	"epoch":"1357873200",
+	"pretty":"9:00 PM CST on January 10, 2013",
+	"day":10,
+	"month":1,
+	"year":2013,
+	"yday":9,
+	"hour":21,
+	"min":"00",
+	"sec":0,
+	"isdst":"0",
+	"monthname":"January",
+	"weekday_short":"Thu",
+	"weekday":"Thursday",
+	"ampm":"PM",
+	"tz_short":"CST",
+	"tz_long":"America/Chicago"
+},
+		"period":2,
+		"high": {
+		"fahrenheit":"57",
+		"celsius":"14"
+		},
+		"low": {
+		"fahrenheit":"45",
+		"celsius":"7"
+		},
+		"conditions":"Partly Cloudy",
+		"icon":"partlycloudy",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
+		"skyicon":"partlycloudy",
+		"pop":10,
+		"qpf_allday": {
+		"in": 0.04,
+		"mm": 1.0
+		},
+		"qpf_day": {
+		"in": 0.00,
+		"mm": 0.0
+		},
+		"qpf_night": {
+		"in": 0.00,
+		"mm": 0.0
+		},
+		"snow_allday": {
+		"in": 0,
+		"cm": 0
+		},
+		"snow_day": {
+		"in": 0,
+		"cm": 0
+		},
+		"snow_night": {
+		"in": 0,
+		"cm": 0
+		},
+		"maxwind": {
+		"mph": 16,
+		"kph": 26,
+		"dir": "WSW",
+		"degrees": 250
+		},
+		"avewind": {
+		"mph": 13,
+		"kph": 21,
+		"dir": "SW",
+		"degrees": 225
+		},
+		"avehumidity": 62,
+		"maxhumidity": 79,
+		"minhumidity": 50
+		}
+		,
+		{"date":{
+	"epoch":"1357959600",
+	"pretty":"9:00 PM CST on January 11, 2013",
+	"day":11,
+	"month":1,
+	"year":2013,
+	"yday":10,
+	"hour":21,
+	"min":"00",
+	"sec":0,
+	"isdst":"0",
+	"monthname":"January",
+	"weekday_short":"Fri",
+	"weekday":"Friday",
+	"ampm":"PM",
+	"tz_short":"CST",
+	"tz_long":"America/Chicago"
+},
+		"period":3,
+		"high": {
+		"fahrenheit":"72",
+		"celsius":"22"
+		},
+		"low": {
+		"fahrenheit":"43",
+		"celsius":"6"
+		},
+		"conditions":"Partly Cloudy",
+		"icon":"partlycloudy",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
+		"skyicon":"mostlysunny",
+		"pop":0,
+		"qpf_allday": {
+		"in": 0.00,
+		"mm": 0.0
+		},
+		"qpf_day": {
+		"in": 0.00,
+		"mm": 0.0
+		},
+		"qpf_night": {
+		"in": 0.01,
+		"mm": 0.3
+		},
+		"snow_allday": {
+		"in": 0,
+		"cm": 0
+		},
+		"snow_day": {
+		"in": 0,
+		"cm": 0
+		},
+		"snow_night": {
+		"in": 0,
+		"cm": 0
+		},
+		"maxwind": {
+		"mph": 18,
+		"kph": 29,
+		"dir": "South",
+		"degrees": 189
+		},
+		"avewind": {
+		"mph": 12,
+		"kph": 19,
+		"dir": "South",
+		"degrees": 186
+		},
+		"avehumidity": 67,
+		"maxhumidity": 85,
+		"minhumidity": 40
+		}
+		,
+		{"date":{
+	"epoch":"1358046000",
+	"pretty":"9:00 PM CST on January 12, 2013",
+	"day":12,
+	"month":1,
+	"year":2013,
+	"yday":11,
+	"hour":21,
+	"min":"00",
+	"sec":0,
+	"isdst":"0",
+	"monthname":"January",
+	"weekday_short":"Sat",
+	"weekday":"Saturday",
+	"ampm":"PM",
+	"tz_short":"CST",
+	"tz_long":"America/Chicago"
+},
+		"period":4,
+		"high": {
+		"fahrenheit":"54",
+		"celsius":"12"
+		},
+		"low": {
+		"fahrenheit":"28",
+		"celsius":"-2"
+		},
+		"conditions":"Mostly Cloudy",
+		"icon":"mostlycloudy",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/mostlycloudy.gif",
+		"skyicon":"cloudy",
+		"pop":0,
+		"qpf_allday": {
+		"in": 0.01,
+		"mm": 0.3
+		},
+		"qpf_day": {
+		"in": 0.00,
+		"mm": 0.0
+		},
+		"qpf_night": {
+		"in": 0.00,
+		"mm": 0.0
+		},
+		"snow_allday": {
+		"in": 0,
+		"cm": 0
+		},
+		"snow_day": {
+		"in": 0,
+		"cm": 0
+		},
+		"snow_night": {
+		"in": 0,
+		"cm": 0
+		},
+		"maxwind": {
+		"mph": 11,
+		"kph": 18,
+		"dir": "North",
+		"degrees": 7
+		},
+		"avewind": {
+		"mph": 9,
+		"kph": 14,
+		"dir": "ENE",
+		"degrees": 57
+		},
+		"avehumidity": 57,
+		"maxhumidity": 100,
+		"minhumidity": 43
+		}
+		]
+		}
+	}
+		,
+	"alerts": [
+	]
+}

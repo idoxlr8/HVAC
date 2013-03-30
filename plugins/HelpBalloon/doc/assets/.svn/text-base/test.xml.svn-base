@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	// 
+	// Copyright (c) 2008 Beau D. Scott | http://www.beauscott.com
+	// 
+	// Permission is hereby granted, free of charge, to any person
+	// obtaining a copy of this software and associated documentation
+	// files (the "Software"), to deal in the Software without
+	// restriction, including without limitation the rights to use,
+	// copy, modify, merge, publish, distribute, sublicense, and/or sell
+	// copies of the Software, and to permit persons to whom the
+	// Software is furnished to do so, subject to the following
+	// conditions:
+	// 
+	// The above copyright notice and this permission notice shall be
+	// included in all copies or substantial portions of the Software.
+	// 
+	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+	// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+	// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+	// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+	// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+	// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+	// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+	// OTHER DEALINGS IN THE SOFTWARE.
+	// 
+-->
+<HelpBalloon>
+	<title>Example Ajax XML Call</title>
+	<content><![CDATA[
+		<p>This is an example of how to pull balloon content in via an XML ajax call. The source for this xml file is <code><a href="test.xml">test.xml</a></code>. Please note the structure of the XML file must match:<br/>
+		<p>
+		<pre style="color: red;"">&lt;HelpBalloon&gt;
+  &lt;title&gt;
+    Your Balloon Title Here
+  &lt;/title&gt;
+  &lt;content&gt;
+    Your Balloon body
+	content goes here. 
+    It's usually wise
+	to wrap this in a
+	&lt![CDATA[ ]]&gt; tag.
+  &lt;/content&gt;
+&lt;/HelpBalloon&gt;</pre>
+	</p>
+		<p>This balloon also illustrates how it deals with long content</p>
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam consequat arcu vehicula nisl. Phasellus quis orci. Pellentesque a nunc eu diam vulputate ullamcorper. Nulla porttitor, nisl quis tristique eleifend, dui erat dapibus massa, id pretium mauris velit in nibh. Nam imperdiet tempor ligula. Nunc turpis eros, aliquet eget, molestie vel, sagittis nec, odio. Integer erat enim, tincidunt mollis, porta a, feugiat id, mauris. Praesent vehicula dui in ipsum. Nullam tempus sapien vulputate mauris pretium pellentesque. Vivamus enim erat, iaculis ut, venenatis ac, blandit at, turpis. Suspendisse sit amet felis et orci porttitor hendrerit. Proin at lectus a arcu pretium congue. Curabitur nonummy orci. Nulla accumsan. Phasellus cursus elit vitae libero. Morbi sagittis, nulla at aliquet consectetuer, dolor nisl pretium lorem, sed lobortis est augue lobortis erat. Maecenas nisl tellus, lacinia et, porta gravida, iaculis sed, risus.</p>
+		<p>Sed elementum sem sed risus. Praesent porttitor laoreet nibh. Mauris rutrum facilisis tortor. Donec faucibus. Vivamus eget risus. Vestibulum eget felis eleifend eros egestas sollicitudin. Maecenas vitae tellus quis nulla suscipit cursus. Quisque laoreet est et magna. Duis dignissim elit quis metus. Duis lobortis felis ut felis tempus pellentesque. Sed pede velit, vulputate eget, congue nec, venenatis ac, diam. Aenean sed justo in libero ornare scelerisque. Donec nibh. In lacinia neque rutrum tortor. Sed accumsan hendrerit tellus. Nulla facilisi. Phasellus sagittis vestibulum turpis. Praesent consequat mi ut magna. Cras iaculis dapibus tortor.</p>
+		<p>Quisque sit amet dolor nec turpis consectetuer scelerisque. Sed purus erat, fermentum id, imperdiet ut, suscipit in, orci. Etiam ultricies risus nec augue. Sed eleifend turpis quis nulla. Vestibulum quis augue sit amet nibh iaculis tempus. In consectetuer. Ut auctor pede at ligula. Phasellus vitae turpis. Cras accumsan pulvinar est. Morbi rhoncus mollis nibh. Vivamus leo ante, tristique id, mollis sit amet, molestie quis, sem. Quisque auctor ornare augue. In luctus. Duis malesuada, lorem in sodales condimentum, velit ligula lacinia purus, nec faucibus ante odio ac mi. Proin luctus.</p>
+		]]>	
+	</content>
+</HelpBalloon>

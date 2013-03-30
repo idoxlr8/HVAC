@@ -1,0 +1,37 @@
+SELECT payments.date AS column1, invoice.paymentdate1 AS column2
+FROM payments
+INNER JOIN invoice
+ON payments.date = invoice.paymentdate1
+
+
+SELECT * FROM payments WHERE payments.date AS column1, AND invoice.paymentdate1 AS column2
+FROM payments
+INNER JOIN invoice
+ON payments.date = invoice.paymentdate1
+
+
+SELECT * from payments t1 
+ LEFT JOIN 
+ (SELECT * from invoice 
+  payments.date = invoice.paymentdate1
+ ) t2
+ ON (t1.Id = t2.Table1_id) 
+ 
+ 
+ 
+ 
+ select paymentdate1 from invoice inner join payments on invoice.id = payments.invoiceid
+ select paymentdate1 from invoice inner join payments on invoice.id = payments.invoiceid
+ 
+ 
+ select * from payments t1 where t1.date in (select paymentdate1 from invoice t2 where t2.paymentdate1 = "x1")
+ 
+ ==========================
+ works
+ 
+ select * from payments t1 where t1.date in (select paymentdate1 from invoice t2 where t2.paymentdate1 = t1.date)
+ 
+ ================================================
+ 
+ 
+ 
